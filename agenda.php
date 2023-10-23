@@ -14,6 +14,7 @@ class agenda{
       $this->age_telefone = $age_telefone;
       $this->age_email    = $age_email;
 
+      //-> CONEXÃO COM O BANCO DE DADOS...
       $servidor = 'localhost';
       $usuario  = 'root';
       $senha    = '';
@@ -27,6 +28,7 @@ class agenda{
       }      
    }
 
+   //-> GET / SETTERS...
    public function getage_codigo($age_codigo){
       $this->age_codigo = $age_codigo;
    }
@@ -52,9 +54,14 @@ class agenda{
       return $this->age_email;
    }
 
+   public function inserirAgenda(){
+      try {      
+         $pdo = $this->conbanco->prepare('INSERT INTO tab_agenda (age_nome,age_telefone,age_email) VALUES (?,?,?)');
+         $pdo->execute($this->age_nome,$this->age_telefone,$this->age_email);
+
+      } catch(Exception $erro) {
+         echo 'ERRO NA INSERÇÃO DOS DADOS: ' . $erro->getMessage();
+      }    
+   }
 }
-
-
-
-
 ?>

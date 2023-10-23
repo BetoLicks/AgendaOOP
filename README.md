@@ -1,6 +1,6 @@
-# CadastroSimplesOOP
+# AgendaOOP
 
-Exemplo de cadastro em Banco de dados utilizando OOP.
+Exemplo de cadastro em Banco de dados MySQL utilizando OOP.
 
 ## 🛠️ Construído com
 
